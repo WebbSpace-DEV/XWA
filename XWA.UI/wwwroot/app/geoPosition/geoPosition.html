@@ -1,0 +1,68 @@
+<link type="text/css" rel="stylesheet" href="app/analysis/analysis.css" />
+<link type="text/css" rel="stylesheet" href="app/dataVis/dataVis.css" />
+<link type="text/css" rel="stylesheet" href="app/common/usMap.css" />
+<link type="text/css" rel="stylesheet" href="app/geoPosition/geoPosition.css" />
+<script type="text/javascript" src="https://d3js.org/topojson.v1.min.js"></script>
+<div id="AnalysisController"
+     data-ng-init="init()">
+  <nav class="dashboard">
+    <div class="dashboardHeader">
+      <label>Platform:</label>
+      <select name="platformSelect"
+              data-ng-change="filterBySelected('platforms', platform.id)"
+              data-ng-model="filter.selectedPlatform"
+              data-ng-options="platform.id for platform in platforms;"></select>
+      <br />
+      <label>Squadron:</label>
+      <select name="squadronSelect"
+              data-ng-change="filterBySelected('squadrons')"
+              data-ng-model="filter.selectedSquadron"
+              data-ng-options="squadron.id for squadron in squadrons;"></select>
+      <br />
+      <label>Airframe:</label>
+      <select name="airframeSelect"
+              data-ng-change="filterBySelected('airframes')"
+              data-ng-model="filter.selectedAirframe"
+              data-ng-options="airframe.id for airframe in airframes;"></select>
+      <br />
+      <label>Airfield:</label>
+      <select name="airfieldSelect"
+              data-ng-change="filterBySelected('airfields')"
+              data-ng-model="filter.selectedAirfield"
+              data-ng-options="getFriendlyName(airfield) for airfield in airfields;"></select>
+      <br />
+      <label>Summary:</label>
+      <select name="summarySelect"
+              data-ng-change="loadDataVis()"
+              data-ng-model="filter.selectedSummary"
+              data-ng-options="summary.name for summary in summaries;"></select>
+    </div>
+    <div class="dashboardBody">
+      <div class="widgets"
+           d3-summary
+           data-ng-repeat="widget in dataVis"
+           data-ng-click="doDataVisClick(widget.id)"
+           summary-data="widget"
+           summary-type="{{filter.selectedSummary.id}}"
+           title="{{summary.label}}"
+           resize-delay="100"></div>
+    </div>
+  </nav>
+  <main class="mainCanvas">
+    <div class="mainHeader">
+      <p>GeoPosition Rendering</p>
+    </div>
+    <div class="mainContent">
+      <div
+          class="fillHeight">
+        <div class="usMapBox"
+             d3-geo-position
+             geo-position-scale="1.0"
+             geo-pos-data="geoPos"
+             airfield-data="airfields"
+             flight-data="flights"
+             resize-delay="100"></div>
+      </div>
+    </div>
+  </main>
+</div>

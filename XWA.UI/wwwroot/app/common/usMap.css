@@ -1,0 +1,50 @@
+.usMapBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #CCC;
+}
+
+.states {
+    fill: #8C8C8C;
+}
+
+.states :hover {
+    fill: #808080;
+}
+
+.state-borders {
+    fill: none;
+    stroke: #CCC;
+}
+
+.region {
+    fill: #0066FF;
+}
+
+.pinned {
+    fill: black;
+}
+
+.selected {
+    fill: #FFCC00;
+}
+
+.anchored {
+    fill: #26A0DA;
+    fill-opacity: 0.5;
+}
+
+.filtered {
+    fill: navy;
+}
+
+.cell {
+    fill: none;
+    stroke: black;
+    stroke-opacity: 0;
+    pointer-events: all;
+    cursor: pointer;
+}

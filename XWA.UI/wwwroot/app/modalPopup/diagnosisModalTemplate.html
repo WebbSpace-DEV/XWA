@@ -1,0 +1,34 @@
+<link type="text/css" rel="stylesheet" href="app/modalPopup/modalPopup.css"/>
+<link type="text/css" rel="stylesheet" href="app/dataVis/dataVis.css"/>
+<div class="container" style="margin:16px" data-ng-init="init()">
+  <div class="row modalRow">
+    <div class="col-md-6">
+      <h4>Provisions Status</h4>
+    </div>
+  </div>
+  <div class="diagnosisModalInfoDiv">
+      <span class="diagnosisModalInfo" ng-show="data.selection.squadron"><span class="header">Squadron: </span>{{data.selection.squadron}}</span>
+      <span class="diagnosisModalInfo" ng-show="data.selection.platform"><span class="header">Platform: </span>{{data.selection.platform}}</span>
+      <span class="diagnosisModalInfo" ng-show="data.selection.id"><span class="header">Airframe: </span>{{data.selection.id}}</span>
+      <span class="diagnosisModalInfo" ng-show="data.selection.airfield"><span class="header">Airfield: </span>{{data.selection.airfield}}</span>
+      <br />
+      <span class="diagnosisModalInfo"><span class="header">Overall Score: </span><span class="scoreData" ng-class="getColorByScore(data.selection.score)" ng-attr-title="{{getColorByScore(data.selection.score)}}">{{data.selection.score}}</span></span>
+      <br />
+      <span class="diagnosisModalInfo"><span class="header">Deflector Shield: </span><span class="scoreData" ng-class="getColorByScore(data.selection.shield)" ng-attr-title="{{getColorByScore(data.selection.shield)}}">{{data.selection.shield}}</span></span>
+      <span class="diagnosisModalInfo"><span class="header">Power Generator: </span><span class="scoreData" ng-class="getColorByScore(data.selection.power)" ng-attr-title="{{getColorByScore(data.selection.power)}}">{{data.selection.power}}</span></span>
+      <span class="diagnosisModalInfo"><span class="header">Astromech Droid: </span><span class="scoreData" ng-class="getColorByScore(data.selection.droid)" ng-attr-title="{{getColorByScore(data.selection.droid)}}">{{data.selection.droid}}</span></span>
+      <span class="diagnosisModalInfo"><span class="header">Servo Actuator: </span><span class="scoreData" ng-class="getColorByScore(data.selection.servo)" ng-attr-title="{{getColorByScore(data.selection.servo)}}">{{data.selection.servo}}</span></span>
+      <span class="diagnosisModalInfo"><span class="header">Sensor Window: </span><span class="scoreData" ng-class="getColorByScore(data.selection.sensor)" ng-attr-title="{{getColorByScore(data.selection.sensor)}}">{{data.selection.sensor}}</span></span>
+  </div>
+  <div class="rightContainer">
+    <div class="centered" style="margin-bottom:30px">
+      <img alt="X-Wing wireframe" src="resources/img/x-wing.png"/>
+      <div class="provisionCanvas"
+           d3-provision
+           provisions="provisions"
+           provision-radius="10">
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-info closeButton" ng-click="close()">Close</button>
+</div>

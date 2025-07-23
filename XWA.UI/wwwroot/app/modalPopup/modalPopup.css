@@ -1,0 +1,103 @@
+label {
+    font-size: 14px;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    padding: 1em 0 1em 0;
+}
+
+.flush-left {
+    padding-left: 0;
+}
+
+.diagnosisModal {
+    width: 780px !important;
+    top: 45% !important;
+    left: 50% !important;
+    margin-top: -300px;
+    margin-left: -375px;
+}
+
+.rightContainer {
+    text-align: right;
+    margin-right: 25px;
+}
+
+.closeButton {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.errorModal .closeButton {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container .closeButton {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.absoluteCloseButton {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.modalRow {
+    height: 100%;
+}
+
+.modalRow h3,
+.modalRow h4 {
+    padding: 0;
+    margin: 5px 5px 1.5em 5px;
+}
+
+.diagnosisModalInfoDiv {
+    position: fixed;
+    margin-left: 20px;
+}
+
+.diagnosisModalInfoDiv .green,
+.diagnosisModalInfoDiv .amber,
+.diagnosisModalInfoDiv .red {
+    padding: 1px 2px;
+}
+
+.diagnosisModalInfo {
+    display: block;
+}
+.diagnosisModalInfo .header {
+    display: inline-block;
+    text-align: right;
+    font-weight: bold;
+    width: 124px;
+    padding-right: 4px;
+    white-space: nowrap;
+}
+
+.diagnosisModalInfo .scoreData {
+    display: inline-block;
+    text-align: right;
+    width: 24px;
+    font-weight: bold;
+}
+
+.errorModal {
+    margin: 16px;
+}
+
+.container {
+    width: 770px;
+}
+
+.centered {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}

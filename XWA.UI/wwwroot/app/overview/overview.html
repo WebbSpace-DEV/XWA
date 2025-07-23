@@ -1,0 +1,103 @@
+<link type="text/css" rel="stylesheet" href="app/overview/overview.css"/>
+<div id="OverviewController"
+     data-ng-init="init()">
+  <nav class="dashboard">
+  </nav>
+  <main class="mainCanvas">
+    <div class="mainHeader">
+      <p>Sample Components</p>
+    </div>
+    <div class="mainContent">
+        <uib-tabset class="fillHeight"
+                    active="active"
+                    type="tabs">
+            <uib-tab index="0"
+                     heading="Overview">
+                <div>
+                    <h4>Welcome...</h4>
+                    <pre>{{getOverviewMessage()}}</pre>
+                </div>
+            </uib-tab>
+            <uib-tab index="1"
+                     heading="Technology Links">
+                <div class="techLinks">
+                    <h4>AngularJS (Past End-of-Life as of January, 2022)</h4>
+                    <h1>Official Documentation</h1>
+                    <a href="https://docs.angularjs.org/guide/introduction" target="_blank">What Is AngularJS?</a>
+                    <h4>D3</h4>
+                    <h1>Source Code (all versions)</h1>
+                    <a href="https://github.com/d3/" target="_blank">D3 on GitHub</a>
+                    <h1>Downloads</h1>
+                    <a href="https://github.com/d3/d3/releases/tag/v4.4.1" target="_blank">4.4.1</a>
+                    <h1>Documentation (V6 &amp; V7)</h1>
+                    <a href="https://www.d3indepth.com/geographic/" target="_blank">D3 in Depth: Making maps with D3</a>
+                </div>
+            </uib-tab>
+            <uib-tab index="2"
+                     heading="TSP Links">
+                <div class="tspLinks">
+                    <h4>&quot;Traveling Salesmen Problem&quot; Links using the Simulated Annealing General Algorithm...</h4>
+                    <a href="https://lovasoa.github.io/salesman.js/" target="_blank">lovasoa Demo (https://lovasoa.github.io/salesman.js/)</a>
+                    <a href="https://github.com/lovasoa/salesman.js/" target="_blank">lovasoa Source Code (https://github.com/lovasoa/salesman.js/)</a>
+                    <a href="https://github.com/nstrayer/travelingSalesman/" target="_blank">Nick Strayer Source Code  (https://github.com/nstrayer/travelingSalesman/)</a>
+                    <a href="https://codepen.io/nicoptere/pen/Ejwpgq/" target="_blank">Nicolas Barradeau CodePen (https://codepen.io/nicoptere/pen/Ejwpgq/)</a>
+                    <h1>Tutorials</h1>
+                    <a href="https://www.baeldung.com/java-simulated-annealing-for-traveling-salesman" target="_blank">https://www.baeldung.com/java-simulated-annealing-for-traveling-salesman</a>
+                    <a href="http://www.theprojectspot.com/tutorial-post/simulated-annealing-algorithm-for-beginners/5" target="_blank">http://www.theprojectspot.com/tutorial-post/simulated-annealing-algorithm-for-beginners/5</a>
+                    <a href="http://www.theprojectspot.com/tutorial-post/simulated-annealing-algorithm-for-beginners/6" target="_blank">http://www.theprojectspot.com/tutorial-post/simulated-annealing-algorithm-for-beginners/6</a>
+                    <h1>Scholarly Articles</h1>
+                    <a href="https://www.tandfonline.com/doi/full/10.1080/25765299.2019.1615172" target="_blank">https://www.tandfonline.com/doi/full/10.1080/25765299.2019.1615172</a>
+                    <a href="https://www.researchgate.net/publication/272060568_Solving_the_TSP_by_Simulated_Annealing_Genetic_Algorithm_Based_on_Google_Maps_JavaScript_API" target="_blank">https://www.researchgate.net/publication/272060568_Solving_the_TSP_by_Simulated_Annealing_Genetic_Algorithm_Based_on_Google_Maps_JavaScript_API</a>
+                </div>
+            </uib-tab>
+            <uib-tab index="3"
+                     select="alertSessionInfo()">
+                <uib-tab-heading>
+                    Session Info
+                </uib-tab-heading>
+                <div>
+                    <pre>{{getSessionInfo()}}</pre>
+                </div>
+            </uib-tab>
+            <uib-tab index="4"
+                     heading="Resizer">
+                <div class="resizerBox"
+                     d3-resizer
+                     resize-delay="100">
+                </div>
+            </uib-tab>
+            <uib-tab index="5"
+                     heading="GlyphIcons">
+                <div>
+                    <ul class="glyphIcon">
+                        <li><i class="icon-arrow-down"></i>&quot;icon-arrow-down&quot;</li>
+                        <li><i class="icon-arrow-left"></i>&quot;icon-arrow-left&quot;</li>
+                        <li><i class="icon-arrow-right"></i>&quot;icon-arrow-right&quot;</li>
+                        <li><i class="icon-arrow-up"></i>&quot;icon-arrow-up&quot;</li>
+                        <li><i class="icon-bell"></i>&quot;icon-bell&quot;</li>
+                        <li><i class="icon-chevron-left"></i>&quot;icon-chevron-left&quot;</li>
+                        <li><i class="icon-chevron-right"></i>&quot;icon-chevron-right&quot;</li>
+                        <li><i class="icon-edit"></i>&quot;icon-edit&quot;</li>
+                        <li><i class="icon-file"></i>&quot;icon-file&quot;</li>
+                        <li><i class="icon-heart"></i>&quot;icon-heart&quot;</li>
+                        <li><i class="icon-minus"></i>&quot;icon-minus&quot;</li>
+                        <li><i class="icon-plus"></i>&quot;icon-plus&quot;</li>
+                        <li><i class="icon-question-sign"></i>&quot;icon-question-sign&quot;</li>
+                        <li><i class="icon-refresh"></i>&quot;icon-refresh&quot;</li>
+                        <li><i class="icon-remove"></i>&quot;icon-remove&quot;</li>
+                        <li><i class="icon-trash"></i>&quot;icon-trash&quot;</li>
+                    </ul>
+                </div>
+            </uib-tab>
+            <uib-tab index="$index + 6"
+                     data-ng-repeat="tab in tabs"
+                     heading="{{tab.title}}"
+                     disable="tab.disabled">
+                <div>
+                    {{tab.content}}
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+  </main>
+</div>

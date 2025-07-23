@@ -1,0 +1,46 @@
+<link type="text/css" rel="stylesheet" href="app/tabular/tabular.css" />
+<div id="AnalysisController"
+     data-ng-init="init()">
+  <nav class="dashboard">
+    <div class="dashboardHeader">
+      <label>Platform:</label>
+      <select name="platformSelect"
+              data-ng-change="filterBySelected('platforms', platform.id)"
+              data-ng-model="filter.selectedPlatform"
+              data-ng-options="platform.id for platform in platforms;"></select>
+      <br />
+      <label>Squadron:</label>
+      <select name="squadronSelect"
+              data-ng-change="filterBySelected('squadrons')"
+              data-ng-model="filter.selectedSquadron"
+              data-ng-options="squadron.id for squadron in squadrons;"></select>
+      <br />
+      <label>Airframe:</label>
+      <select name="airframeSelect"
+              data-ng-change="filterBySelected('airframes')"
+              data-ng-model="filter.selectedAirframe"
+              data-ng-options="airframe.id for airframe in airframes;"></select>
+      <br />
+      <label>Airfield:</label>
+      <select name="airfieldSelect"
+              data-ng-change="filterBySelected('airfields')"
+              data-ng-model="filter.selectedAirfield"
+              data-ng-options="getFriendlyName(airfield) for airfield in airfields;"></select>
+    </div>
+  </nav>
+  <main class="mainCanvas">
+    <div class="mainHeader">
+      <p>X-Wing Fleet Status: {{fleet.score}}</p>
+    </div>
+    <div class="mainContent">
+      <div data-ui-grid="analysisTableOptions"
+           data-ui-grid-resize-columns
+           data-ui-grid-save-state
+           data-ui-grid-move-columns
+           class="fillHeight">
+        <div class="noResultsFoundWatermark" ng-show="isEmptyArray(analysis)">No Results Found</div>
+      </div>
+    </div>
+
+  </main>
+</div>

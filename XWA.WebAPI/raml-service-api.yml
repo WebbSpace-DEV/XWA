@@ -1,0 +1,197 @@
+title: X-Wing Advisor Web Service
+version: 1
+mediaType: application/json
+protocols: [HTTPS]
+baseUri: https://{bucketName}/xwa_ws/api/v1/
+baseUriParameters:
+ bucketName:
+  description: The name of the bucket (test, stage, prod)
+/analysis/fleet:
+       type: collection
+       get:
+        description: Retrieve a collection of mock-up data, reading data from external CSV files
+        responses:
+         200:
+           body:
+             application/json:
+              example:
+               {"platforms":
+                [
+                 {"id": "xx-xxx",
+                 "name": "xx-xxx",
+                 "level1Count": 0,
+                 "level2Count": 0,
+                 "level3Count": 0,
+                 "level1Percent": 0.00,
+                 "level2Percent": 0.00,
+                 "level3Percent": 0.00,
+                 "score": 0}
+                ],
+               "squadrons":
+                [
+                 {"id": "xxx",
+                 "name": "xxx",
+                 "level1Count": 0,
+                 "level2Count": 0,
+                 "level3Count": 0,
+                 "level1Percent": 0.00,
+                 "level2Percent": 0.00,
+                 "level3Percent": 0.00,
+                 "score": 0}
+                ],
+               "airfields":
+                [
+                 {"id": "HSV",
+                 "name": "Huntsville International Airport",
+                 "city": "Huntsville",
+                 "state": "AL",
+                 "country": "USA",
+                 "latitude": 34.6404475,
+                 "longitude": -86.77310944,
+                 "level1Count": 0,
+                 "level2Count": 0,
+                 "level3Count": 0,
+                 "level1Percent": 0.00,
+                 "level2Percent": 0.00,
+                 "level3Percent": 0.00,
+                 "score": 0}
+                ],
+               "airframes":
+                [
+                 {"id": "xxx-xxxx",
+                 "name": "xxx-xxxx",
+                 "platform": "xx-xxx",
+                 "squadron": "xxx",
+                 "shield": 0,
+                 "power": 0,
+                 "droid": 0,
+                 "servo": 0,
+                 "sensor": 0,
+                 "score": 0}
+                ],
+               "provisions":
+                [
+                 {"id": "OVERALL | SHIELD | POWER | DROID | SERVO | SENSOR",
+                 "name": "xxx",
+                 "level1Count": 0,
+                 "level2Count": 0,
+                 "level3Count": 0,
+                 "level1Percent": 0.00,
+                 "level2Percent": 0.00,
+                 "level3Percent": 0.00,
+                 "score": 0}
+                ],
+                "success": true,
+                "status": 200}
+
+/analysis/flights/:
+       type: collection
+       get:
+        description: Retrieve a collection of flights
+        responses:
+         200:
+           body:
+             application/json:
+              example:
+               {"airframes":
+                [
+                 {"origin": "HSV",
+                 "destination": "XXX",
+                 "count": 0}
+                ],
+                "success": true,
+                "status": 200}
+
+/analysis/airfields/:
+       type: collection
+       get:
+        description: Retrieve a collection of airfields
+        responses:
+         200:
+           body:
+             application/json:
+              example:
+               {"airframes":
+                [
+                 {"id": "HSV",
+                 "name": "Huntsville International Airport",
+                 "city": "Huntsville",
+                 "state": "AL",
+                 "country": "USA",
+                 "latitude": 34.6404475,
+                 "longitude": -86.77310944}
+                ],
+                "success": true,
+                "status": 200}
+
+/parkVisit/parkVisits/:
+       type: collection
+       get:
+        description: Retrieve a collection of park visit data, reading data from external CSV files
+        responses:
+         200:
+           body:
+             application/json:
+              example:
+               {"parks":
+                [
+                 {"id": "xxx",
+                 "name": "xxx",
+                 "type": "xxx",
+                 "region": "xxx",
+                 "fips": "00|99",
+                 "visitors": 9999999,
+                 "acreage": 9999999,
+                 "latitude": 00.0000000,
+                 "longitude": -00.00000000}
+                ],
+               "regions":
+                [
+                 {"id": "UNK | AKR | IMR | MWR | NCR | NER | PWR | SER",
+                 "name": "xxx"}
+                ],
+                "success": true,
+                "status": 200}
+
+/parkVisit/parks/{csvFileParks}:
+       type: collection
+       get:
+        description: Retrieve a collection of parks from external CSV files
+        responses:
+         200:
+           body:
+             application/json:
+              example:
+               {"parks":
+                [
+                 {"id": "xxx",
+                 "name": "xxx",
+                 "type": "xxx",
+                 "region": "xxx",
+                 "fips": "00|99",
+                 "visitors": 9999999,
+                 "acreage": 9999999,
+                 "latitude": 00.0000000,
+                 "longitude": -00.00000000}
+                ],
+                "success": true,
+                "status": 200}
+
+/portalIcon/portalIcons:
+       type: collection
+       get:
+        description: Retrieve a mock-up collection of portal icons
+        responses:
+         200:
+           body:
+             application/json:
+              example:
+               {"icons":
+                [
+                 {"shortTitle": "Title",
+                 "longTitle": "Long Title",
+                 "color": "#FFFFFF",
+                 "url": "UrlToApp"}
+                ],
+                "success": true,
+                "status": 200}

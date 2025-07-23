@@ -1,0 +1,15 @@
+.squadron-connector,
+.airfield-connector {
+    fill: none;
+    stroke-width: 1;
+}
+
+.pinned:hover .airfield-connector {
+    stroke-opacity: 0.3;
+    stroke: black;
+}
+
+.pinned:hover .squadron-connector {
+    stroke-opacity: 1.0;
+    stroke: black;
+}

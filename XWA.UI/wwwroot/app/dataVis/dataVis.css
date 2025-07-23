@@ -1,0 +1,152 @@
+label.left {
+    float: left;
+}
+
+label.right {
+    float: right;
+}
+
+input[type=radio] {
+    position: relative;
+    top: -3px;
+}
+
+.widgets {
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.dashboardBody .widgets:hover {
+    background-color: #E6E6E6;
+}
+
+.needle,
+.needleCenter,
+.widgetText {
+    fill: #0033CC;
+}
+
+.widgetCallOut {
+    fill: #0033CC;
+}
+
+.sphere {
+    fill: url('#sphere');
+}
+
+.level1 {
+    fill: darkgreen;
+}
+
+.level2 {
+    fill: #FFCC00;
+}
+
+.level3 {
+    fill: red;
+}
+
+.ringLevel1 {
+    fill: url('#gradRingLevel1');
+}
+
+.ringLevel2 {
+    fill: url('#gradRingLevel2');
+}
+
+.ringLevel3 {
+    fill: url('#gradRingLevel3');
+}
+
+.sphereLevel0 {
+    fill: url('#gradSphereLevel0');
+}
+
+.sphereLevel1 {
+    fill: url('#gradSphereLevel1');
+}
+
+.sphereLevel2 {
+    fill: url('#gradSphereLevel2');
+}
+
+.sphereLevel3 {
+    fill: url('#gradSphereLevel3');
+}
+
+.widgetText,
+.widgetCallOut {
+    stroke-width: 0;
+}
+
+.widgets:hover .needle,
+.widgets:hover .needleCenter,
+.widgets:hover .widgetText,
+.widgets:hover .widgetCallOut {
+    fill: #0066FF;
+}
+
+.widgetText,
+.widgetCallOut {
+    font-weight: bold;
+    font-size: inherit;
+}
+
+.needleWarning,
+.needleWarningCenter {
+    fill: transparent;
+}
+
+.provisionCanvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 522px;
+    width: 485px;
+}
+
+.provision {
+    fill-opacity: 0.7;
+    stroke-opacity: 0.7;
+    stroke: black;
+    stroke-width: 2;
+}
+
+g:hover .provision {
+    fill-opacity: 1;
+    stroke-opacity: 1;
+}
+
+.level1Text,
+.level2Text,
+.level3Text {
+    font-weight: bold;
+    font-size: 1.2em;
+    stroke-width: 0;
+}
+
+.level1Text {
+    fill: white;
+}
+
+.level2Text {
+    fill: black;
+}
+
+.level3Text {
+    fill: white;
+}
+
+.barLevel1 {
+    fill: url('#gradBarLevel1');
+}
+
+.barLevel2 {
+    fill: url('#gradBarLevel2');
+}
+
+.barLevel3 {
+    fill: url('#gradBarLevel3');
+}

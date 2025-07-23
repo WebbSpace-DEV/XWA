@@ -1,0 +1,16 @@
+.resizerBox {
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.sphereBox {
+    width: 298px;
+    height: 298px;
+    position: absolute;
+    bottom: 0;
+}
+
+.sphere {
+    fill: url('#gradSphere');
+}

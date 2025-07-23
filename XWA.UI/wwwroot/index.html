@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html id="ng-app">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>X-Wing Advisor</title>
+    <meta charset="utf-8" />
+
+    <style id="antiClickjack">
+        body {
+            display: none !important;
+        }
+    </style>
+    <script type="text/javascript">
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
+
+    <link rel="icon" sizes="any" type="image/svg+xml" href="resources/img/favicon.svg">
+    <link type="text/css" rel="stylesheet" href="resources/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="resources/font-awesome/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="resources/animate/animate.css" />
+    <link type="text/css" rel="stylesheet" href="resources/ui-grid/ui-grid.min.css" />
+    <link type="text/css" rel="stylesheet" href="app/common/app.css" />
+
+    <script type="text/javascript" src="resources/jquery/jquery.min.js"></script>
+    <script type="text/javascript">var $j = jQuery.noConflict();</script>
+    <script type="text/javascript" src="resources/angular/angular.min.js"></script>
+    <script type="text/javascript" src="resources/angular/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="resources/ui-router/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="resources/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="resources/ui-grid/ui-grid.min.js"></script>
+    <script type="text/javascript" src="resources/fileSaver/FileSaver.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/common/sessionFactory.js"></script>
+    <script type="text/javascript" src="app/common/common.js"></script>
+    <script type="text/javascript" src="app/overview/overviewController.js"></script>
+    <script type="text/javascript" src="app/analysis/analysisController.js"></script>
+    <script type="text/javascript" src="app/parkVisit/parkVisitController.js"></script>
+    <script type="text/javascript" src="app/portalIcon/portalIconController.js"></script>
+    <script type="text/javascript" src="app/analysis/analysisService.js"></script>
+    <script type="text/javascript" src="app/analysis/analysisPersistenceFactory.js"></script>
+    <script type="text/javascript" src="app/modalPopup/diagnosisModalController.js"></script>
+    <script type="text/javascript" src="app/modalPopup/errorModalController.js"></script>
+    <script type="text/javascript" src="app/dataVis/d3Launch.js"></script>
+    <script type="text/javascript" src="app/dataVis/dataVisDirectives.js"></script>
+    <script type="text/javascript" src="app/eyeCandy/eyeCandyDirectives.js"></script>
+    <script type="text/javascript" src="app/geoPosition/geoPositionDirectives.js"></script>
+    <script type="text/javascript" src="app/parkVisit/parkVisitDirectives.js"></script>
+    <script type="text/javascript" src="app/parkVisit/parkVisitService.js"></script>
+    <script type="text/javascript" src="app/parkVisit/parkVisitPersistenceFactory.js"></script>
+    <script type="text/javascript" src="app/portalIcon/portalIconDirectives.js"></script>
+    <script type="text/javascript" src="app/portalIcon/portalIconService.js"></script>
+    <script type="text/javascript" src="app/portalIcon/portalIconPersistenceFactory.js"></script>
+    <script type="text/javascript" src="https://d3js.org/topojson.v1.min.js"></script>
+    <script type="text/javascript">
+        angular.element(document).ready(function () {
+            var isIE = eval("/*@cc_on!@*/!1");
+            if (document.compatMode !== 'CSS1Compat') {
+                jQuery('body').html('<div class="nav navbar-inverse navbar-fixed-top"><div class=""><div class="container"><span class="navbar-brand" style="font-weight: bold; color: white">Force Builder</span></div></div></div><div style="margin-top: 10px; padding-top: 10px">This site requires quirks mode turned off.</div>');
+            } else if (isIE && !document.documentMode) {
+                jQuery('body').html('<div class="nav navbar-inverse navbar-fixed-top"><div class=""><div class="container"><span class="navbar-brand" style="font-weight: bold; color: white">Force Builder</span></div></div></div><div style="margin-top: 10px; padding-top: 10px">This site requires at least IE 10.</div>');
+            } else if (document.documentMode && document.documentMode < 10) {
+                jQuery('body').html('<div class="nav navbar-inverse navbar-fixed-top"><div class=""><div class="container"><span class="navbar-brand" style="font-weight: bold; color: white">Force Builder</span></div></div></div><div style="margin-top: 10px; padding-top: 10px">This site requires a document mode of at least 10.</div>');
+            } else {
+                angular.bootstrap(document, ['xwa']);
+            }
+        });
+    </script>
+</head>
+  <body>
+    <header>
+      <div class="navbar navbar-inverse navbar-fixed-top"
+           data-ng-controller="NavController"
+           data-ng-init="init()">
+        <div class="classificationBannerTop"></div>
+        <div class="navbar-inner">
+          <div class="logoBox"
+               d3-logo
+               logo-scale="0.16"
+               logo-class="logo"></div>
+          <a data-ui-sref="#"
+             class="brand">
+            X-Wing Advisor</a>
+          <ul class="nav">
+            <li class="dropdown"
+                data-ng-class="{active: $state.includes('overview')}">
+              <a class="dropdown-toggle"
+                 data-toggle="dropdown"
+                 data-ui-sref="overview">Overview</a>
+            </li>
+            <li class="dropdown"
+                data-ng-class="{active: $state.includes('tabular')}">
+              <a class="dropdown-toggle"
+                 data-toggle="dropdown"
+                 data-ui-sref="tabular">Tabular</a>
+            </li>
+            <li class="dropdown"
+                data-ng-class="{active: $state.includes('analysis')}">
+              <a class="dropdown-toggle"
+                 data-toggle="dropdown"
+                 data-ui-sref="analysis">Analysis</a>
+            </li>
+            <li class="dropdown"
+                data-ng-class="{active: $state.includes('geoPosition')}">
+              <a class="dropdown-toggle"
+                 data-toggle="dropdown"
+                 data-ui-sref="geoPosition">GeoPosition</a>
+            </li>
+            <li class="dropdown"
+                data-ng-class="{active: $state.includes('parkVisit')}">
+              <a class="dropdown-toggle"
+                 data-toggle="dropdown"
+                 data-ui-sref="parkVisit">Park Visit</a>
+            </li>
+            <li class="dropdown"
+                data-ng-class="{active: $state.includes('portalIcon')}">
+              <a class="dropdown-toggle"
+                 data-toggle="dropdown"
+                 data-ui-sref="portalIcon">Icons</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="main-page-content"
+         data-ui-view>
+    </div>
+    <footer>
+      <div class="classificationBannerBottom"></div>
+      <div class="legal"></div>
+    </footer>
+    <div class="loading-widget loading-overlay"
+         style="display: none">
+      <div class="loading-image"></div>
+    </div>
+  </body>
+</html>

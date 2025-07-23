@@ -1,0 +1,26 @@
+<link type="text/css" rel="stylesheet" href="app/portalIcon/portalIcon.css"/>
+<link type="text/css" rel="stylesheet" href="app/eyeCandy/eyeCandy.css"/>
+<div id="PortalIconController"
+     data-ng-init="init()">
+  <nav class="dashboard">
+    <div class="sphereBox"
+         d3-sphere
+         resize-delay="100"
+         sphere-is-wireframe="true">
+    </div>
+  </nav>
+  <main class="mainCanvas">
+    <div class="mainHeader">
+      <p>Portal Icons and Eye Candy</p>
+    </div>
+    <div class="mainContent">
+      <div class="portalIconBox"
+           d3-portal-icon
+           data-ng-repeat="icon in icons"
+           icon-data="icon"
+           data-ng-click="doIconClick(icon.url)"
+           title="{{icon.longTitle}}"
+           resize-delay="100"></div>
+    </div>
+  </main>
+</div>

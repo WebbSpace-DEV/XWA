@@ -1,0 +1,6 @@
+type,name
+SENSOR,Sensor Window
+SERVO,Servo Actuator
+DROID,Astromech Droid
+POWER,Power Generator
+SHIELD,Deflector Shield

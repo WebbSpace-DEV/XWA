@@ -1,0 +1,17 @@
+<link type="text/css" rel="stylesheet" href="app/modalPopup/modalPopup.css"/>
+<div class="errorModal" data-ng-init='init()'>
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Error</h1>
+      <small>
+        An error occurred while processing your request. Please try again.
+        If the error persists, please <a href="mailto:helpdesk@webbspace.net?subject=X-Wing Advisor Error">email the XWA Help Desk.</a>
+      </small>
+    </div>
+  </div>
+  <form name="colsForm" autocomplete="off" novalidate>
+    <div class="col-md-12 workarea" style="margin-top:16px">
+      <button type="submit" ng-click="close()" class="btn btn-info">Close</button>
+    </div>
+  </form>
+</div>

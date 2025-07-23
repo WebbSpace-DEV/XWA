@@ -1,0 +1,92 @@
+#AnalysisController {
+    display: flex;
+    flex: 1;
+}
+
+.ui-grid-cell {
+    text-align: center;
+}
+
+.ui-grid-row,
+.ui-grid-cell,
+.ui-grid-cell .ui-grid-vertical-bar {
+    height: auto !important;
+}
+
+.mainContent .ui-grid-cell {
+    border: none;
+    vertical-align: middle;
+}
+
+.mainContent .ui-grid-header-cell {
+    font-size: 14px;
+}
+
+.gridFooter {
+    margin: 0;
+    background: whitesmoke;
+    border-top: 1px solid #D4D4D4;
+    position: relative;
+}
+
+.gridFooter {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: right;
+    vertical-align: middle;
+    padding: 4px 12px;
+}
+
+.ui-grid-viewport {
+    background-color: white;
+}
+
+.ui-grid-header {
+    color: black;
+}
+
+.ui-grid-cell.ui-grid-disable-selection.ui-grid-row-header-cell {
+    pointer-events: auto !important;
+}
+
+.noResultsFoundWatermark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.25;
+    font-size: 3em;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+}
+
+.clickableCell:hover,
+.clickableCell:focus {
+    cursor: pointer;
+}
+
+.clickableCell:focus {
+    color: #005580;
+}
+
+.clickableCell:hover {
+    color: White;
+    background-color: #4168BD;
+}
+
+.red,
+.amber,
+.green {
+    text-align: center;
+}
+
+.circle {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow: visible;
+}
+
+.circle span {
+    position: relative;
+}

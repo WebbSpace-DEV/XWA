@@ -1,0 +1,136 @@
+#AnalysisController {
+    display: flex;
+    flex: 1;
+}
+
+.clickableCell span {
+    text-align: center;
+    margin-top: 6px;
+    width: 100%;
+    display: inline-block;
+}
+
+.mainContent .ui-grid-cell {
+    border: none;
+    vertical-align: middle;
+}
+
+.mainContent .ui-grid-header-cell {
+    font-size: 14px;
+}
+
+.gridFooter {
+    margin: 0;
+    background: whitesmoke;
+    border-top: 1px solid #D4D4D4;
+    position: relative;
+}
+
+.gridFooter {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: right;
+    vertical-align: middle;
+    padding: 4px 12px;
+    background: #D9D9D9;
+    background: -webkit-linear-gradient(whitesmoke 25%, #D9D9D9 95%);
+    background: -o-linear-gradient(whitesmoke 25%, #D9D9D9 95%);
+    background: -moz-linear-gradient(whitesmoke 25%, #D9D9D9 95%);
+    background: linear-gradient(whitesmoke 25%, #D9D9D9 95%);
+}
+
+.ui-grid-viewport {
+    background-color: white;
+}
+
+.ui-grid-header {
+    color: black;
+}
+
+.ui-grid-cell.ui-grid-disable-selection.ui-grid-row-header-cell {
+    pointer-events: auto !important;
+}
+
+.noResultsFoundWatermark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.25;
+    font-size: 3em;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+}
+
+.clickableCell:hover,
+.clickableCell:focus {
+    cursor: pointer;
+}
+
+.clickableCell:focus {
+    color: #005580;
+}
+
+.clickableCell:hover {
+    color: White;
+    background-color: #4168BD;
+}
+
+.red {
+    text-align: center;
+    color: white;
+    background-color: red !important;
+}
+
+.amber {
+    text-align: center;
+    background-color: #FFCC00 !important;
+}
+
+.green {
+    text-align: center;
+    color: white;
+    background-color: darkgreen !important;
+}
+
+.circle {
+    margin-top: -1px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    overflow: visible;
+}
+
+.circle span {
+    position: relative;
+    top: 7px;
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+
+.circle .red {
+    background: red;
+    background: -webkit-radial-gradient(#FF6666 20%, red 100%);
+    background: -o-radial-gradient(#FF6666 20%, red 100%);
+    background: -moz-radial-gradient(#FF6666 20%, red 100%);
+    background: radial-gradient(#FF6666 20%, red 100%);
+}
+
+.circle .amber {
+    background: #FFCC00;
+    background: -webkit-radial-gradient(#FFE066 25%, #FFCC00 60%);
+    background: -o-radial-gradient(#FFE066 25%, #FFCC00 60%);
+    background: -moz-radial-gradient(#FFE066 25%, #FFCC00 60%);
+    background: radial-gradient(#FFE066 25%, #FFCC00 60%);
+}
+
+.circle .green {
+    background: darkgreen;
+    background: -webkit-radial-gradient(#00DD00 20%, darkgreen 100%);
+    background: -o-radial-gradient(#00DD00 20%, darkgreen 100%);
+    background: -moz-radial-gradient(#00DD00 20%, darkgreen 100%);
+    background: radial-gradient(#00DD00 20%, darkgreen 100%);
+}

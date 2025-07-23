@@ -1,0 +1,25 @@
+#ParkController {
+    display: flex;
+    flex: 1;
+}
+
+.dashboardHeader {
+    min-height: 28px;
+}
+
+.dashboardBody {
+    height: 79vh;
+}
+
+.dashboardBody input[type='checkbox'] {
+    margin: 0 4px 4px 4px;
+}
+
+.dashboardBody .park-selection label.checkboxLabel {
+    padding-left: .5em;
+}
+
+.dashboardBody .park-selection label.checkboxLabel:hover {
+    color: white;
+    background-color: #26A0DA;
+}

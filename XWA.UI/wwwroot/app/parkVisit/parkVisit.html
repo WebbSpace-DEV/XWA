@@ -1,0 +1,41 @@
+<link type="text/css" rel="stylesheet" href="app/common/usMap.css" />
+<link type="text/css" rel="stylesheet" href="app/parkVisit/parkVisit.css" />
+<script type="text/javascript" src="https://d3js.org/topojson.v1.min.js"></script>
+<div id="ParkController"
+     data-ng-init="init()">
+  <nav class="dashboard">
+    <div class="dashboardHeader">
+      <label>Region:</label>
+      <select name="regionSelect"
+              data-ng-change="filterBySelected('regions', region.id)"
+              data-ng-model="filter.selectedRegion"
+              data-ng-options="region.name for region in regions;"></select>
+    </div>
+    <div class="dashboardBody">
+      <div ng-repeat="park in parks | filter: { filtered: true}"
+           class="park-selection">
+        <label class="checkboxLabel">
+          <input type="checkbox"
+                 data-ng-model="park.selected" />
+          {{park.name}}
+        </label>
+      </div>
+    </div>
+  </nav>
+  <main class="mainCanvas">
+    <div class="mainHeader">
+      <p>Park Visit Rendering</p>
+    </div>
+    <div class="mainContent">
+      <div
+          class="fillHeight">
+        <div class="usMapBox"
+             d3-park-visit
+             park-visit-scale="1.0"
+             park-visit-parks="parks"
+             park-visit-domain="visitors"
+             resize-delay="100"></div>
+      </div>
+    </div>
+  </main>
+</div>
