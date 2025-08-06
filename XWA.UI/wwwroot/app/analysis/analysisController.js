@@ -9,6 +9,7 @@ angular.module('xwa.analysis', [
   'ngSanitize',
   'xwa.analysisService',
   'xwa.analysisPersistenceFactory',
+  'xwa.sessionFactory',
   'xwa.common',
   'xwa.d3',
   'xwa.dataVisDirectives'
@@ -20,12 +21,14 @@ angular.module('xwa.analysis', [
     $uibModal,
     AnalysisService,
     AnalysisPersistenceFactory,
+    SessionFactory,
     Common) {
 
+    $scope.sessionFactory = SessionFactory;
     $scope.common = Common;
 
     $scope.init = function () {
-      $scope.getColorByScore = Common.getColorByScore;
+      $scope.getColorByScore = $scope.common.getColorByScore;
       // The variable $scope.analysis is used for rendering airframe data in tabular form.
       $scope.analysis = [];
       // These are the collections for the UI controls.
@@ -43,15 +46,15 @@ angular.module('xwa.analysis', [
       $scope.geoPos = [];
       var doApplyFilter = false;
       if (
-        $scope.isEmptyArray(AnalysisPersistenceFactory.data.analysis) ||
-        $scope.isEmptyArray(AnalysisPersistenceFactory.data.fleet) ||
-        $scope.isEmptyArray(AnalysisPersistenceFactory.data.platforms) ||
-        $scope.isEmptyArray(AnalysisPersistenceFactory.data.squadrons) ||
-        $scope.isEmptyArray(AnalysisPersistenceFactory.data.airframes) ||
-        $scope.isEmptyArray(AnalysisPersistenceFactory.data.provisions) ||
-        $scope.isEmptyArray(AnalysisPersistenceFactory.data.airfields) ||
-        $scope.isEmptyArray(AnalysisPersistenceFactory.data.flights) ||
-        $scope.isEmptyArray(AnalysisPersistenceFactory.data.summaries)) {
+        $scope.common.isEmptyArray(AnalysisPersistenceFactory.data.analysis) ||
+        $scope.common.isEmptyArray(AnalysisPersistenceFactory.data.fleet) ||
+        $scope.common.isEmptyArray(AnalysisPersistenceFactory.data.platforms) ||
+        $scope.common.isEmptyArray(AnalysisPersistenceFactory.data.squadrons) ||
+        $scope.common.isEmptyArray(AnalysisPersistenceFactory.data.airframes) ||
+        $scope.common.isEmptyArray(AnalysisPersistenceFactory.data.provisions) ||
+        $scope.common.isEmptyArray(AnalysisPersistenceFactory.data.airfields) ||
+        $scope.common.isEmptyArray(AnalysisPersistenceFactory.data.flights) ||
+        $scope.common.isEmptyArray(AnalysisPersistenceFactory.data.summaries)) {
         AnalysisService.getAnalysis()
           .then(function (response) {
             // Preload response data.
@@ -155,19 +158,19 @@ angular.module('xwa.analysis', [
       }
 
       // These are the selected values for the controls.
-      if ($scope.isEmpty($scope.filter.selectedPlatform)) {
+      if ($scope.common.isEmpty($scope.filter.selectedPlatform)) {
         $scope.filter.selectedPlatform = AnalysisPersistenceFactory.filter.selectedPlatform;
       }
-      if ($scope.isEmpty($scope.filter.selectedSquadron)) {
+      if ($scope.common.isEmpty($scope.filter.selectedSquadron)) {
         $scope.filter.selectedSquadron = AnalysisPersistenceFactory.filter.selectedSquadron;
       }
-      if ($scope.isEmpty($scope.filter.selectedAirframe)) {
+      if ($scope.common.isEmpty($scope.filter.selectedAirframe)) {
         $scope.filter.selectedAirframe = AnalysisPersistenceFactory.filter.selectedAirframe;
       }
-      if ($scope.isEmpty($scope.filter.selectedAirfield)) {
+      if ($scope.common.isEmpty($scope.filter.selectedAirfield)) {
         $scope.filter.selectedAirfield = AnalysisPersistenceFactory.filter.selectedAirfield;
       }
-      if ($scope.isEmpty($scope.filter.selectedSummary)) {
+      if ($scope.common.isEmpty($scope.filter.selectedSummary)) {
         $scope.filter.selectedSummary = AnalysisPersistenceFactory.filter.selectedSummary;
       }
       if (doApplyFilter) {
@@ -186,16 +189,16 @@ angular.module('xwa.analysis', [
       var filterSquadron = false;
       var filterAirframe = false;
       var filterAirfield = false;
-      if (!$scope.isEmpty($scope.filter.selectedPlatform.id)) {
+      if (!$scope.common.isEmpty($scope.filter.selectedPlatform.id)) {
         filterPlatform = 'ALL' !== $scope.filter.selectedPlatform.id.toUpperCase();
       }
-      if (!$scope.isEmpty($scope.filter.selectedSquadron.id)) {
+      if (!$scope.common.isEmpty($scope.filter.selectedSquadron.id)) {
         filterSquadron = 'ALL' !== $scope.filter.selectedSquadron.id.toUpperCase();
       }
-      if (!$scope.isEmpty($scope.filter.selectedAirframe.id)) {
+      if (!$scope.common.isEmpty($scope.filter.selectedAirframe.id)) {
         filterAirframe = 'ALL' !== $scope.filter.selectedAirframe.id.toUpperCase();
       }
-      if (!$scope.isEmpty($scope.filter.selectedAirfield.id)) {
+      if (!$scope.common.isEmpty($scope.filter.selectedAirfield.id)) {
         filterAirfield = 'ALL' !== $scope.filter.selectedAirfield.id.toUpperCase();
       }
 
@@ -559,18 +562,8 @@ angular.module('xwa.analysis', [
       return s;
     };
 
-    $scope.isEmpty = function (obj) {
-      return (null === obj || undefined === obj);
-    };
-
     $scope.isEmptyArray = function (arr) {
-      return ($scope.isEmpty(arr) || 0 === arr.length);
-    };
-
-    $scope.titleCase = function (str) {
-      return str.toLowerCase().split(' ').map(function (word) {
-        return word.replace(word[0], word[0].toUpperCase());
-      }).join(' ');
+      return ($scope.common.isEmpty(arr) || 0 === arr.length);
     };
 
   });
