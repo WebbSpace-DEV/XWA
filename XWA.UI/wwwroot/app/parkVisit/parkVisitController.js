@@ -4,6 +4,7 @@ angular.module('xwa.parkVisit', [
   'ngSanitize',
   'xwa.parkVisitService',
   'xwa.parkVisitPersistenceFactory',
+  'xwa.sessionFactory',
   'xwa.common',
   'xwa.d3'
 ]).controller('ParkVisitController',
@@ -13,8 +14,10 @@ angular.module('xwa.parkVisit', [
     $sanitize,
     ParkVisitService,
     ParkVisitPersistenceFactory,
+    SessionFactory,
     Common) {
 
+    $scope.sessionFactory = SessionFactory;
     $scope.common = Common;
 
     $scope.init = function () {
@@ -25,8 +28,8 @@ angular.module('xwa.parkVisit', [
       $scope.filter = ParkVisitPersistenceFactory.filter;
       var doApplyFilter = false;
       if (
-        $scope.isEmptyArray(ParkVisitPersistenceFactory.data.parks) ||
-        $scope.isEmptyArray(ParkVisitPersistenceFactory.data.regions)) {
+        $scope.common.isEmptyArray(ParkVisitPersistenceFactory.data.parks) ||
+        $scope.common.isEmptyArray(ParkVisitPersistenceFactory.data.regions)) {
         ParkVisitService.getParkVisits()
           .then(function (response) {
             // Preload response data.
@@ -68,10 +71,10 @@ angular.module('xwa.parkVisit', [
       }
 
       // These are the selected values for the controls.
-      if ($scope.isEmptyArray($scope.parks)) {
+      if ($scope.common.isEmptyArray($scope.parks)) {
         $scope.parks = ParkVisitPersistenceFactory.data.parks;
       }
-      if ($scope.isEmpty($scope.filter.selectedRegion)) {
+      if ($scope.common.isEmpty($scope.filter.selectedRegion)) {
         $scope.filter.selectedRegion = ParkVisitPersistenceFactory.filter.selectedRegion;
       }
       if (doApplyFilter) {
@@ -85,7 +88,7 @@ angular.module('xwa.parkVisit', [
 
     $scope.applyFilter = function () {
       var filterRegion = false;
-      if (!$scope.isEmpty($scope.filter.selectedRegion.id)) {
+      if (!$scope.common.isEmpty($scope.filter.selectedRegion.id)) {
         filterRegion = 'ALL' !== $scope.filter.selectedRegion.id.toUpperCase();
       }
       ParkVisitPersistenceFactory.filter.selectedRegion = $scope.filter.selectedRegion;
@@ -150,17 +153,4 @@ angular.module('xwa.parkVisit', [
       return idx;
     };
 
-    $scope.isEmpty = function (obj) {
-      return (null === obj || undefined === obj);
-    };
-
-    $scope.isEmptyArray = function (arr) {
-      return ($scope.isEmpty(arr) || 0 === arr.length);
-    };
-
-    $scope.titleCase = function (str) {
-      return str.toLowerCase().split(' ').map(function (word) {
-        return word.replace(word[0], word[0].toUpperCase());
-      }).join(' ');
-    };
   });

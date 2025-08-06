@@ -99,8 +99,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyVersion>1.0.0.45834</AssemblyVersion>
-    <FileVersion>1.0.0.45834</FileVersion>
+    <AssemblyVersion>1.0.0.45875</AssemblyVersion>
+    <FileVersion>1.0.0.45875</FileVersion>
     <Copyright>Copyright © 2025 Steven W. Webb</Copyright>
     <UserSecretsId>bf0e35ee-c540-4a0f-9ecc-91237f978e75</UserSecretsId>
   </PropertyGroup>

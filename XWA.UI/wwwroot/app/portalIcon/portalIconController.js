@@ -5,6 +5,7 @@ angular.module('xwa.portalIcon', [
   'xwa.portalIconService',
   'xwa.portalIconPersistenceFactory',
   'xwa.sessionFactory',
+  'xwa.common',
   'xwa.eyeCandyDirectives'
 ]).controller('PortalIconController',
   function (
@@ -13,9 +14,11 @@ angular.module('xwa.portalIcon', [
     $window,
     PortalIconService,
     PortalIconPersistenceFactory,
-    SessionFactory) {
+    SessionFactory,
+    Common) {
 
     $scope.sessionFactory = SessionFactory;
+    $scope.common = Common;
 
     $scope.init = function () {
       $scope.$state = $state;
@@ -58,4 +61,5 @@ angular.module('xwa.portalIcon', [
     $scope.isEmptyArray = function (arr) {
       return ($scope.isEmpty(arr) || 0 === arr.length);
     };
+
   });
