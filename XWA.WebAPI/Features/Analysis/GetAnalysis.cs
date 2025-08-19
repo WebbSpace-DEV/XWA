@@ -200,11 +200,11 @@ public class GetAnalysis()
                 case ProvisionTypes.SENSOR:
                     airframeAnalysis.Sensor = provision.Score;
                     break;
-                case ProvisionTypes.SERVO:
-                    airframeAnalysis.Servo = provision.Score;
-                    break;
                 case ProvisionTypes.DROID:
                     airframeAnalysis.Droid = provision.Score;
+                    break;
+                case ProvisionTypes.SERVO:
+                    airframeAnalysis.Servo = provision.Score;
                     break;
                 case ProvisionTypes.POWER:
                     airframeAnalysis.Power = provision.Score;

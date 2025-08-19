@@ -17,14 +17,14 @@ public class ProvisionScoreOptions
     public string Sensor { get; set; } = string.Empty;
 
     /// <summary>
-    /// The bar-delimited range of randomizable servo scores.
-    /// </summary>
-    public string Servo { get; set; } = string.Empty;
-
-    /// <summary>
     /// The bar-delimited range of randomizable astromech droid scores.
     /// </summary>
     public string Droid { get; set; } = string.Empty;
+
+    /// <summary>
+    /// The bar-delimited range of randomizable servo scores.
+    /// </summary>
+    public string Servo { get; set; } = string.Empty;
 
     /// <summary>
     /// The bar-delimited range of randomizable power scores.

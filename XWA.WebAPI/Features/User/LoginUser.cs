@@ -14,8 +14,8 @@ internal sealed class LoginUser(TokenProvider tokenProvider, IConfiguration conf
         StringBuilder token = new();
         await Task.Run(() => {
             bool isMatch = true;
-            isMatch = isMatch && string.Equals(request.Email, configuration["Credential:Email"]!, StringComparison.OrdinalIgnoreCase);
-            isMatch = isMatch && string.Equals(request.Password, configuration["Credential:Password"]!, StringComparison.Ordinal);
+            isMatch = isMatch && string.Equals(request.Email, configuration["Credentials:Email"]!, StringComparison.OrdinalIgnoreCase);
+            isMatch = isMatch && string.Equals(request.Password, configuration["Credentials:Password"]!, StringComparison.Ordinal);
             if (isMatch)
             {
                 UserResponse user = new(

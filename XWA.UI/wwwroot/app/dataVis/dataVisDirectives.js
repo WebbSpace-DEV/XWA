@@ -389,13 +389,13 @@ angular.module('xwa.dataVisDirectives', [
                     x = d3Launch.provision.power.x;
                     y = d3Launch.provision.power.y;
                     break;
-                  case ('droid'):
-                    x = d3Launch.provision.droid.x;
-                    y = d3Launch.provision.droid.y;
-                    break;
                   case ('servo'):
                     x = d3Launch.provision.servo.x;
                     y = d3Launch.provision.servo.y;
+                    break;
+                  case ('droid'):
+                    x = d3Launch.provision.droid.x;
+                    y = d3Launch.provision.droid.y;
                     break;
                   case ('sensor'):
                     x = d3Launch.provision.sensor.x;

@@ -56,7 +56,7 @@ angular.module('xwa.parkVisitDirectives', [
                 var voronoi = d3.voronoi()
                   .extent([[-1, -1], [width + 1, height + 1]]);
 
-                var urlParkVisits = common.getServiceUrl('parkVisit/parkVisits');
+                var urlParkVisits = common.getServiceUrl('parkVisit/parkVisits', false);
 
                 // Having experimented with various ways to get the JSON
                 // payload, nothing works 100% except to use the endpoint URL.

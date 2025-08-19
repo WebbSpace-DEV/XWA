@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using System.Net;
-using XWA.WebAPI.Features.Book;
 
 namespace XWA.WebAPI.Exceptions;
 
@@ -30,7 +29,6 @@ public class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger) : IE
             StatusCode = exception switch
             {
                 BadHttpRequestException => (int)HttpStatusCode.BadRequest,
-                NoBookFoundException or BookDoesNotExistException => (int)HttpStatusCode.NotFound,
                 _ => (int)HttpStatusCode.InternalServerError,
             }
         };

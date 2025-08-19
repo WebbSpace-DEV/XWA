@@ -22,8 +22,8 @@ angular.module('xwa.analysis').controller('DiagnosisModalController', [
       $scope.provisions = [
         {provision: 'shield', score: data.selection.shield},
         {provision: 'power', score: data.selection.power},
-        {provision: 'droid', score: data.selection.droid},
         {provision: 'servo', score: data.selection.servo},
+        {provision: 'droid', score: data.selection.droid},
         {provision: 'sensor', score: data.selection.sensor}
       ];
     };

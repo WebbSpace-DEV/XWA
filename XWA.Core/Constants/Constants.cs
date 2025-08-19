@@ -25,8 +25,8 @@ public struct MaxLevelScore
 public enum ProvisionTypes
 {
     SENSOR,
-    SERVO,
     DROID,
+    SERVO,
     POWER,
     SHIELD
 }

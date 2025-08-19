@@ -14,7 +14,7 @@ internal static class UserEndpoints
     /// <returns>The builder with endpoint-mapped routes.</returns>
     public static IEndpointRouteBuilder MapUserEndpoints(this IEndpointRouteBuilder builder)
     {
-        builder.MapPost("user/login", async (LoginUser.Request request, LoginUser useCase) =>
+        builder.MapPost("/user/login", async (LoginUser.Request request, LoginUser useCase) =>
             await useCase.Handle(request))
             .WithTags(_TAG);
 

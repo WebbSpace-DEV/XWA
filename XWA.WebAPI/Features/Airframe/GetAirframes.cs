@@ -66,11 +66,11 @@ public class GetAirframes()
                         case ProvisionTypes.SENSOR:
                             provision.Score = GetRandomBetween(provisionScoreOptions.Value.Sensor);
                             break;
-                        case ProvisionTypes.SERVO:
-                            provision.Score = GetRandomBetween(provisionScoreOptions.Value.Servo);
-                            break;
                         case ProvisionTypes.DROID:
                             provision.Score = GetRandomBetween(provisionScoreOptions.Value.Droid);
+                            break;
+                        case ProvisionTypes.SERVO:
+                            provision.Score = GetRandomBetween(provisionScoreOptions.Value.Servo);
                             break;
                         case ProvisionTypes.POWER:
                             provision.Score = GetRandomBetween(provisionScoreOptions.Value.Power);

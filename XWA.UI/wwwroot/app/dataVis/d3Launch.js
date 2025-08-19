@@ -48,13 +48,9 @@ angular.module('xwa.d3', [
     };
 
     _d3Launch.provision = {
-      shield: {
+      sensor: {
         x: 242,
-        y: 426
-      },
-      power: {
-        x: 242,
-        y: 371
+        y: 35
       },
       droid: {
         x: 242,
@@ -62,12 +58,16 @@ angular.module('xwa.d3', [
       },
       servo: {
         x: 242,
+        y: 371
+      },
+      power: {
+        x: 242,
+        y: 426
+      },
+      shield: {
+        x: 242,
         y: 476
       },
-      sensor: {
-        x: 242,
-        y: 35
-      }
     };
 
     function onScriptLoad() {

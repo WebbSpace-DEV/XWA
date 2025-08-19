@@ -3,7 +3,6 @@ using XWA.WebAPI.Extensions;
 using XWA.WebAPI.Features.Airfield;
 using XWA.WebAPI.Features.Airframe;
 using XWA.WebAPI.Features.Analysis;
-using XWA.WebAPI.Features.Book;
 using XWA.WebAPI.Features.Fleet;
 using XWA.WebAPI.Features.Flight;
 using XWA.WebAPI.Features.Park;
@@ -52,59 +51,55 @@ class Program
 
         app.UseExceptionHandler();
 
-        app.MapGroup("/api/v1/")
-            .WithTags("Book Endpoints")
-            .MapBookEndpoints();
-
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Analysis Endpoints")
             .MapAnalysisEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Fleet Endpoints")
             .MapFleetEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Platform Endpoints")
             .MapPlatformEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Squadron Endpoints")
             .MapSquadronEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Airframe Endpoints")
             .MapAirframeEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Provision Endpoints")
             .MapProvisionEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Airfield Endpoints")
             .MapAirfieldEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Flight Endpoints")
             .MapFlightEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Park Visit Endpoints")
             .MapParkVisitEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Region Endpoints")
             .MapRegionEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Park Endpoints")
             .MapParkEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("Portal Icon Endpoints")
             .MapPortalIconEndpoints();
 
-        app.MapGroup("/xwa_ws/api/v1/")
+        app.MapGroup("/api/v1")
             .WithTags("User Endpoints")
             .MapUserEndpoints();
 

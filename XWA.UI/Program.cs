@@ -17,12 +17,17 @@ class Program
         app.UseRouting();
 
         app.MapGet("api/sessionFactory", async () => {
-            string url = builder.Configuration["WebService:BaseAddress"]!;
+
+            string url = String.Format(
+                builder.Configuration["WebService:BaseAddressTemplate"]!,
+                app.Environment.IsDevelopment() ?
+                builder.Configuration["WebService:LocalHost"]! :
+                builder.Configuration["WebService:RemoteHost"]!);
 
             UserRequest user = new(
                 Guid.NewGuid(),
-                builder.Configuration["Credential:Email"]!,
-                builder.Configuration["Credential:Password"]!
+                builder.Configuration["Credentials:Email"]!,
+                builder.Configuration["Credentials:Password"]!
                 );
 
             StringBuilder sb = new();
