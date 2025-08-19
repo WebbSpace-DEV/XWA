@@ -17,7 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "artifacts", "artifacts", "{
 		artifacts\Minimal_API_with_CRUD.url = artifacts\Minimal_API_with_CRUD.url
 		artifacts\ps_enmasse_rename.txt = artifacts\ps_enmasse_rename.txt
 		artifacts\umd_plus_local_html.txt = artifacts\umd_plus_local_html.txt
-		artifacts\WebbSpace.txt = artifacts\WebbSpace.txt
 		artifacts\x-wing_01.png = artifacts\x-wing_01.png
 		artifacts\x-wing_02.png = artifacts\x-wing_02.png
 		artifacts\x-wing_03.png = artifacts\x-wing_03.png
