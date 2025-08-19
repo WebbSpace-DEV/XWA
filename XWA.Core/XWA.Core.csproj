@@ -4,9 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>1.0.0.45875</AssemblyVersion>
-    <FileVersion>1.0.0.45875</FileVersion>
-    <Copyright>Copyright © 2025 Steven W. Webb</Copyright>
+    <AssemblyVersion>1.0.0.45888</AssemblyVersion>
+    <FileVersion>1.0.0.45888</FileVersion>
+    <Copyright>Copyright © 2025 Steven W. Webb || WebbSpace</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

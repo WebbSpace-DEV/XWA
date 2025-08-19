@@ -9,7 +9,7 @@ angular.module('xwa.parkVisitService', [
     common) {
 
     this.getParkVisits = function () {
-      var url = common.getServiceUrl('parkVisit/parkVisits', true);
+      var url = common.getServiceUrl('parkVisit/parkVisits', false);
       return $http.get(url)
         .then(function success(response) {
           return response;

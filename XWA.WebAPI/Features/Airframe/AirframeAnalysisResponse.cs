@@ -41,16 +41,16 @@ public class AirframeAnalysisResponse : AirframeBase
     public decimal Sensor { get; set; } = 0M;
 
     /// <summary>
-    /// The servo provision associated with the airframe.
-    /// </summary>
-    [Name("servo")]
-    public decimal Servo { get; set; } = 0M;
-
-    /// <summary>
     /// The astromech droid provision associated with the airframe.
     /// </summary>
     [Name("droid")]
     public decimal Droid { get; set; } = 0M;
+
+    /// <summary>
+    /// The servo provision associated with the airframe.
+    /// </summary>
+    [Name("servo")]
+    public decimal Servo { get; set; } = 0M;
 
     /// <summary>
     /// The power provision associated with the airframe.
@@ -75,10 +75,10 @@ public class AirframeAnalysisResponse : AirframeBase
         sb.Append($"{Airfield,10}");
         sb.Append($"{GetLevel(Sensor),10}");
         sb.Append($"{Sensor,10:N0}");
-        sb.Append($"{GetLevel(Servo),10}");
-        sb.Append($"{Servo,10:N0}");
         sb.Append($"{GetLevel(Droid),10}");
         sb.Append($"{Droid,10:N0}");
+        sb.Append($"{GetLevel(Servo),10}");
+        sb.Append($"{Servo,10:N0}");
         sb.Append($"{GetLevel(Power),10}");
         sb.Append($"{Power,10:N0}");
         sb.Append($"{GetLevel(Shield),10}");

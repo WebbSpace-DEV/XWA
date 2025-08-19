@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using XWA.WebAPI.Features.Book;
+using XWA.WebAPI.Features.Provision;
 
 namespace XWA.WebAPI.Context;
 
@@ -10,12 +10,12 @@ namespace XWA.WebAPI.Context;
 public class ApplicationContext(DbContextOptions<ApplicationContext> options) : DbContext(options)
 {
     // Default schema for the database context
-    private const string DefaultSchema = "bookapi";
+    private const string DefaultSchema = "xwaapi";
 
     /// <summary>
-    /// DbSet to represent the collection of books in our database.
+    /// DbSet to represent the collection of provisions in our database.
     /// </summary>
-    public DbSet<BookModel> Books { get; set; }
+    public DbSet<ProvisionBase> Provision { get; set; }
 
     // Constructor to configure the database context
 

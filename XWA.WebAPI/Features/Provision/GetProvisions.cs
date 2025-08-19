@@ -60,11 +60,11 @@ public class GetProvisions()
                     case ProvisionTypes.SENSOR:
                         record.Bias = provisionBiasOptions.Value.Sensor;
                         break;
-                    case ProvisionTypes.SERVO:
-                        record.Bias = provisionBiasOptions.Value.Servo;
-                        break;
                     case ProvisionTypes.DROID:
                         record.Bias = provisionBiasOptions.Value.Droid;
+                        break;
+                    case ProvisionTypes.SERVO:
+                        record.Bias = provisionBiasOptions.Value.Servo;
                         break;
                     case ProvisionTypes.POWER:
                         record.Bias = provisionBiasOptions.Value.Power;

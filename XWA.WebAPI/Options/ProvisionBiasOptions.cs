@@ -17,14 +17,14 @@ public class ProvisionBiasOptions
     public int Sensor { get; set; } = 1;
 
     /// <summary>
-    /// The pilot-survivability bias for the servo provision.
-    /// </summary>
-    public int Servo { get; set; } = 1;
-
-    /// <summary>
     /// The pilot-survivability bias for the astromech droid provision.
     /// </summary>
     public int Droid { get; set; } = 1;
+
+    /// <summary>
+    /// The pilot-survivability bias for the servo provision.
+    /// </summary>
+    public int Servo { get; set; } = 1;
 
     /// <summary>
     /// The pilot-survivability bias for the power provision.

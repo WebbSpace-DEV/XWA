@@ -59,7 +59,7 @@ angular.module('xwa.geoPositionDirectives', [
                 var voronoi = d3.voronoi()
                   .extent([[-1, -1], [width + 1, height + 1]]);
 
-                var urlAirfields = common.getServiceUrl('analysis/airfields');
+                var urlAirfields = common.getServiceUrl('analysis/airfields', true);
 
                 // Having experimented with various ways to get the JSON
                 // payload, nothing works 100% except to use the endpoint URL.

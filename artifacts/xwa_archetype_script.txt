@@ -1,0 +1,61 @@
+#
+# Set .NET framework version.
+#
+#dotnet tool update --global dotnet-ef --version 6.0.9
+#dotnet tool update --global dotnet-ef --version 8.0.14
+
+#
+# Create the solution.
+#
+dotnet new sln -n XWA
+
+#
+# Create the projects from templates.
+#
+dotnet new classlib -n XWA.Core   -lang "C#" -o XWA.Core   --framework net8.0
+dotnet new webapi   -n XWA.WebAPI   -lang "C#" -o XWA.WebAPI   --framework net8.0
+dotnet new web      -n XWA.UI       -lang "C#" -o XWA.UI       --framework net8.0
+
+#
+# Add the projects to the solution.
+#
+dotnet sln XWA.sln add XWA.Core/XWA.Core.csproj
+dotnet sln XWA.sln add XWA.WebAPI/XWA.WebAPI.csproj
+dotnet sln XWA.sln add XWA.UI/XWA.UI.csproj
+
+#
+# This is a textual representation of the per-project dependencies.
+#
+# XWA.WebAPI   -->   XWA.Core
+# XWA.UI       -->   XWA.Core
+
+#
+# Wire up the dependencies.
+#
+dotnet add XWA.WebAPI/XWA.WebAPI.csproj   reference XWA.Core/XWA.Core.csproj
+dotnet add XWA.UI/XWA.UI.csproj           reference XWA.Core/XWA.Core.csproj
+
+cd ./XWA.WebAPI
+dotnet add package Microsoft.EntityFrameworkCore.Design           --framework net8.0
+dotnet add package Microsoft.EntityFrameworkCore                  --framework net8.0
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer        --framework net8.0
+dotnet add package Microsoft.EntityFrameworkCore.Tools            --framework net8.0
+dotnet add package FluentValidation.DependencyInjectionExtensions --framework net8.0
+cd ..
+
+#
+# Undo it all.
+#
+#cd ./XWA.WebAPI
+#dotnet remove package FluentValidation.DependencyInjectionExtensions --framework net8.0
+#dotnet remove package Microsoft.EntityFrameworkCore.Tools            --framework net8.0
+#dotnet remove package Microsoft.EntityFrameworkCore.SqlServer        --framework net8.0
+#dotnet remove package Microsoft.EntityFrameworkCore                  --framework net8.0
+#dotnet remove package Microsoft.EntityFrameworkCore.Design           --framework net8.0
+#cd ..
+#dotnet remove package Microsoft.EntityFrameworkCore.Design
+#dotnet remove XWA.UI/XWA.UI.csproj           reference XWA.Core/XWA.Core.csproj
+#dotnet remove XWA.WebAPI/XWA.WebAPI.csproj   reference XWA.Core/XWA.Core.csproj
+#dotnet sln XWA.sln remove XWA.UI/XWA.UI.csproj
+#dotnet sln XWA.sln remove XWA.WebAPI/XWA.WebAPI.csproj
+#dotnet sln XWA.sln remove XWA.Core/XWA.Core.csproj

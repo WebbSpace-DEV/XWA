@@ -51,6 +51,7 @@
 .tab-pane h3,
 .tab-pane h4 {
     margin: 0;
+    line-height: 2em;
 }
 
 .tab-pane pre {
@@ -95,7 +96,6 @@ div.tspLinks a:hover {
 div.techLinks h1,
 div.tspLinks h1 {
     font-size: 17.5px;
-    line-height: 20px;
 }
 
 div.techLinks,
@@ -105,7 +105,7 @@ div.tspLinks {
 
 div.techLinks h1,
 div.tspLinks h1 {
-    padding: 1em 0 0 .75em;
+    padding: 0em 0 0 2em;
     margin: 0;
 }
 
@@ -114,7 +114,8 @@ div.tspLinks a,
 div.techLinks a:hover,
 div.tspLinks a:hover {
     font-weight: normal;
-    padding: .25em .75em 0 2.75em;
+    padding: 0 .75em 0 4em;
+    line-height: 2em;
 }
 
 div.techLinks a:hover,

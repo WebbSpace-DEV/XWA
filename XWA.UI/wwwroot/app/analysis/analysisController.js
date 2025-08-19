@@ -391,8 +391,8 @@ angular.module('xwa.analysis', [
     var scoreDetailCellTemplate = '<div ng-attr-title="{{grid.appScope.common.getColorByScore(row.entity.score)}}" class="ui-grid-cell-contents circle"><div class="{{grid.appScope.common.getColorByScore(row.entity.score)}} circle"><span>{{grid.getCellValue(row, col)}}</span></div></div>';
     var shieldDetailCellTemplate = '<div ng-attr-title="{{grid.appScope.common.getColorByScore(row.entity.shield)}}" class="ui-grid-cell-contents circle"><div class="{{grid.appScope.common.getColorByScore(row.entity.shield)}} circle"><span>{{grid.getCellValue(row, col)}}</span></div></div>';
     var powerDetailCellTemplate = '<div ng-attr-title="{{grid.appScope.common.getColorByScore(row.entity.power)}}" class="ui-grid-cell-contents circle"><div class="{{grid.appScope.common.getColorByScore(row.entity.power)}} circle"><span>{{grid.getCellValue(row, col)}}</span></div></div>';
-    var droidDetailCellTemplate = '<div ng-attr-title="{{grid.appScope.common.getColorByScore(row.entity.droid)}}" class="ui-grid-cell-contents circle"><div class="{{grid.appScope.common.getColorByScore(row.entity.droid)}} circle"><span>{{grid.getCellValue(row, col)}}</span></div></div>';
     var servoDetailCellTemplate = '<div ng-attr-title="{{grid.appScope.common.getColorByScore(row.entity.servo)}}" class="ui-grid-cell-contents circle"><div class="{{grid.appScope.common.getColorByScore(row.entity.servo)}} circle"><span>{{grid.getCellValue(row, col)}}</span></div></div>';
+    var droidDetailCellTemplate = '<div ng-attr-title="{{grid.appScope.common.getColorByScore(row.entity.droid)}}" class="ui-grid-cell-contents circle"><div class="{{grid.appScope.common.getColorByScore(row.entity.droid)}} circle"><span>{{grid.getCellValue(row, col)}}</span></div></div>';
     var sensorDetailCellTemplate = '<div ng-attr-title="{{grid.appScope.common.getColorByScore(row.entity.sensor)}}" class="ui-grid-cell-contents circle"><div class="{{grid.appScope.common.getColorByScore(row.entity.sensor)}} circle"><span>{{grid.getCellValue(row, col)}}</span></div></div>';
 
     var textWidthNarrow = 106;
@@ -454,14 +454,6 @@ angular.module('xwa.analysis', [
         visible: true,
         cellTemplate: powerDetailCellTemplate,
         sortingAlgorithm: sortScore},
-      {field: 'droid',
-        displayName: 'Astromech Droid',
-        width: '*',
-        minWidth: numberWidth,
-        enableHiding: false,
-        visible: true,
-        cellTemplate: droidDetailCellTemplate,
-        sortingAlgorithm: sortScore},
       {field: 'servo',
         displayName: 'Servo Actuator',
         width: '*',
@@ -470,6 +462,16 @@ angular.module('xwa.analysis', [
         visible: true,
         cellTemplate: servoDetailCellTemplate,
         sortingAlgorithm: sortScore},
+      {
+        field: 'droid',
+        displayName: 'Astromech Droid',
+        width: '*',
+        minWidth: numberWidth,
+        enableHiding: false,
+        visible: true,
+        cellTemplate: droidDetailCellTemplate,
+        sortingAlgorithm: sortScore
+      },
       {field: 'sensor',
         displayName: 'Sensor Window',
         width: '*',

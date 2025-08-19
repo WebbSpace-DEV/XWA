@@ -11,7 +11,6 @@ using XWA.WebAPI.Exceptions;
 using XWA.WebAPI.Features.Airfield;
 using XWA.WebAPI.Features.Airframe;
 using XWA.WebAPI.Features.Analysis;
-using XWA.WebAPI.Features.Book;
 using XWA.WebAPI.Features.Fleet;
 using XWA.WebAPI.Features.Flight;
 using XWA.WebAPI.Features.Park;
@@ -104,8 +103,6 @@ public static class ServiceExtensions
         builder.Services.AddScoped<IParkService, ParkService>();
 
         builder.Services.AddScoped<IPortalIconService, PortalIconService>();
-
-        builder.Services.AddScoped<IBookService, BookService>();
 
         builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
