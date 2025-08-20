@@ -36,18 +36,18 @@ class Program
         app.UseHttpsRedirection();
 
         // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
+        //if (app.Environment.IsDevelopment())
+        //{
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
-            // Add in a development-only endpoint to view "behind the scenes" information.
-            app.MapGet("/config", async request =>
-            {
-                string config = ((IConfigurationRoot)app.Configuration).GetDebugView();
-                await request.Response.WriteAsync(config);
-            });
-        }
+        // Add in a development-only endpoint to view "behind the scenes" information.
+        app.MapGet("/config", async request =>
+        {
+            string config = ((IConfigurationRoot)app.Configuration).GetDebugView();
+            await request.Response.WriteAsync(config);
+        });
+        //}
 
         app.UseExceptionHandler();
 
