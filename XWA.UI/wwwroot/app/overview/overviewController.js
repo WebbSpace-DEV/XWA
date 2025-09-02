@@ -73,36 +73,45 @@ angular.module('xwa.overview', [
 
     $scope.getOverviewMessage = function () {
       var message = '';
-      message += 'The "X-Wing Advisor" web application demonstrates many of the ';
-      message += 'capabilities of AngularJS, data visualization, and best-practice ';
-      message += 'information assurance and security.\n\n';
+      message += 'The "X-Wing Advisor" (XWA) web application demonstrates the ';
+      message += 'capabilities of data visualizations, the responsiveness of ';
+      message += 'AngularJS, and the application of best-practice information ';
+      message += 'assurance and security.\n\n';
 
-      message += 'Data is provided via RESTful web services using Minimal API ';
-      message += 'and Vertical Slice Architecture in the orchestration layer. ';
-      message += 'The application implements JSON Web Tokens (JWT) to authenticate ';
+      message += 'Data is provided via RESTful web services using Minimal API and ';
+      message += 'Vertical Slice Architecture in the orchestration layer. The ';
+      message += 'application implements JSON Web Token (JWT) to authenticate ';
       message += 'and authorize access to the web API service endpoints.\n\n';
 
-      message += 'In the sample data, the X-Wing fleet is organized by airframes, ';
+      message += 'In the data structure, the X-Wing fleet is organized by airframes, ';
       message += 'squadrons, and platforms. Airframes identify specific X-Wing ';
       message += 'vehicles, squadrons identify groups of X-Wing airframes, and ';
       message += 'platforms identify variations between X-Wing airframes.\n\n';
 
       message += 'Each X-Wing airframe has an identical set of five (5) provisioned ';
-      message += 'components: "Sensor Window", "Astromech Droid", "Servo Actuator", ';
-      message += '"Power Generator", and "Deflector Shield". The provisions are ';
+      message += 'components: "Sensor Window," "Astromech Droid," "Servo Actuator," ';
+      message += '"Power Generator," and "Deflector Shield". The provisions are ';
       message += 'linearly biased according to their criticality. In the module that ';
       message += 'generates "shim" data on the backend of the RESTful web service, ';
       message += 'each of the per-airframe provisions is randomly assigned a weighted ';
       message += 'score, and by applying the provision ordinal-bias business logic, an ';
       message += 'overall score is assigned to the airframe, with score averages ';
       message += 'aggregating forward through the fleet hierarchy. This allows the web ';
-      message += 'application user to analyze and visualize the readiness of provisions, ';
+      message += 'application user to visualize and analyze the disposition of provisions, ';
       message += 'airframes, squadrons, platforms, airfields, and ultimately the ';
       message += 'readiness of fleet itself.\n\n';
 
       message += 'Level 3 ("red") scores range from 0 to 34, Level 2 ("amber") scores ';
       message += 'range from 35 to 49, and Level 1 ("green") scores range from 50 to ';
       message += '100.\n\n';
+
+      message += 'XWA provides a framework for Descriptive and Diagnostic analytics, ';
+      message += 'and Prescriptive analytics inferences might be made across the fleet ';
+      message += 'within its data structure hierarchy.\n\n';
+
+      message += 'All of the visual elements in XWA are turn-key, solution-specific ';
+      message += 'components written using the d3.js visualization library with AngularJS ';
+      message += 'and JavaScript.\n\n';
 
       return message;
     };
